@@ -20,9 +20,10 @@ def home():
 @app.route('/site/info')
 def info():
     info = {
-        "site.name" : "qu-sports-app",
+        "site.name" : "app-template",
         "version": "v0.0.1",
         "status" : "development",
     }
     
     return info
+
