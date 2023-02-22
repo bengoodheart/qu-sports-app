@@ -12,9 +12,14 @@ app = Flask(__name__)
 load_dotenv()
 CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/appTable.db'
-migrate = Migrate(app, db)
 
-# TODO: ADD THE CREATE ALL THING
+db.init_app(app)
+
+with app.app_context():
+    db.create_all()
+    db.session.commit()
+
+migrate = Migrate(app, db)
 
 @app.route('/')
 def home():
@@ -46,6 +51,13 @@ def add():
         )
     
     db.session.add(post)
+    db.session.commit()
     return 'Posted'
 
-    
+@app.route('/get')
+def getAllPosts():
+    rows = db.session.query(BlogPost).all()
+    allposts = []
+    for row in rows:
+        allposts.append(row.to_dict())
+    return allposts
