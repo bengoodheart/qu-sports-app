@@ -38,12 +38,9 @@ def info():
 
 @app.route('/add')
 def add():
-
-    
     title = 'Test'
     post = '<h1>Wow</h1><br><p>Today I learned how to code </p>'
     tags = ['wow', 'test', 'cool']
-    
     post = BlogPost(
         title=title,
         post=post,

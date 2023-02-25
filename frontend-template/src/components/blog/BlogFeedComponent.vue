@@ -1,7 +1,11 @@
 <template lang="">
     <div>
+        <b-row>
+        <b-col cols="2"><b-button to="/addPost"> New Post </b-button></b-col>
+        <b-col cols="6">
         {{response}}
-        {{status }}
+        </b-col>
+        </b-row>
     </div>
 </template>
 <script>
@@ -10,9 +14,8 @@ export default {
     name: 'BlogFeedComponent',
     async setup(){
         const rest = new restHelper()
-        let response  = await rest.pingServer()
-        let status = await rest.status
-        return { response, status }
+        let response  = await rest.getAllPosts()
+        return { response }
     }
 }
 </script>

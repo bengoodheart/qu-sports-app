@@ -1,11 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import BlogComponent from "@/components/blog/BlogComponent.vue"
+import AddNewPostComponent from '@/components/blog/AddNewPostComponent.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    children:[{
+      path: '/',
+      component: BlogComponent
+    },
+    {
+      path: '/addPost',
+      component: AddNewPostComponent
+    }
+    ]
   },  
   {
     path: '/about',

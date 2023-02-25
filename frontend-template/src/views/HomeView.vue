@@ -5,13 +5,11 @@
         <div class="content">
         <b-card>
             <b-row>
-                <b-col cols="4"></b-col>
+                <b-col cols="2"></b-col>
                 <b-col cols="4">
-                    <Suspense>
-                    <BlogFeedComponent/>
-                    </Suspense>
+                    <BlogComponent />
                 </b-col>
-                <b-row cols="4"></b-row>
+                <b-row cols="2"></b-row>
             </b-row>
         </b-card>
         </div>
@@ -22,11 +20,11 @@
 <script>
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
-import BlogFeedComponent from '../components/blog/BlogFeedComponent.vue';
+import BlogComponent from '@/components/blog/BlogComponent.vue';
 
 export default {
     name: 'HomeView',
-    components: {HeaderComponent, FooterComponent, BlogFeedComponent},
+    components: {HeaderComponent, FooterComponent, BlogComponent},
     setup(){
         return {}
     }

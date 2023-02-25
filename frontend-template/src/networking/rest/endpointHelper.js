@@ -2,6 +2,7 @@
 const REST_BASE_URL = "http://localhost:5000"
 export const urls ={
     base : "/",
+    get : '/get',
 }
 
 class EndpointHelper {
