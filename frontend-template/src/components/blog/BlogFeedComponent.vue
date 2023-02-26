@@ -2,7 +2,7 @@
     <div>
         <b-row>
         <b-col cols="2"><b-button to="/addPost"> New Post </b-button></b-col>
-        <b-col cols="6">
+        <b-col cols="10">
         {{response}}
         </b-col>
         </b-row>

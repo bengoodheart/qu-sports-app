@@ -1,7 +1,7 @@
 <template lang="">
     <div>
         <Suspense>
-        <BlogFeedComponent />
+        <router-view></router-view>
         </Suspense>
     </div>
 </template>

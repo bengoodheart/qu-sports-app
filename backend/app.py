@@ -36,15 +36,13 @@ def info():
     return info
 
 
-@app.route('/add')
-def add():
-    title = 'Test'
-    post = '<h1>Wow</h1><br><p>Today I learned how to code </p>'
-    tags = ['wow', 'test', 'cool']
+@app.route('/add/<post_obj>')
+def add(post_obj):
+    
     post = BlogPost(
-        title=title,
-        post=post,
-        tags=tags,
+        title=post_obj.title,
+        post=post_obj.post,
+        tags=post_obj.tags,
         )
     
     db.session.add(post)

@@ -6,10 +6,9 @@
         <b-card>
             <b-row>
                 <b-col cols="2"></b-col>
-                <b-col cols="4">
+                <b-col cols="10">
                     <BlogComponent />
                 </b-col>
-                <b-row cols="2"></b-row>
             </b-row>
         </b-card>
         </div>
